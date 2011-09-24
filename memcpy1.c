@@ -8,7 +8,7 @@ void memcpy1(void *dest, void *src, size_t count)
 {
   if(!count){return;}
   int diff = abs( (long)(dest - src) );
-#ifdef X86 //64 bit int is only faster at X86, X64 prefers 2 time 32 int
+#ifndef X86 //64 bit int is only faster at X86, X64 prefers 2 time 32 int
   if( diff >= 8)
     while(count >= 8){ *(unsigned long long*)dest = *(unsigned long long*)src; dest += 8; src += 8; count -= 8; }
   if( (diff >= 4) && (count >= 4) )

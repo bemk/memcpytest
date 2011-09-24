@@ -7,12 +7,12 @@ gcc -o 4 memcpy4.c
 gcc -o 5 memcpy5.c
 
 echo "Stevens algoritme"
-time ./1
+time -p ./1
 echo "Simpel algoritme"
-time ./2
+time -p ./2
 echo "Simpel Duffs device"
-time ./3
+time -p ./3
 echo "Complex Duffs device"
-time ./4
+time -p ./4
 echo "Native library"
-time ./5
+time -p ./5
